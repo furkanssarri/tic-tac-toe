@@ -6,7 +6,6 @@ function gameBoardModule() {
       let gameArea = document.getElementById("gameArea");
       for (let i = 0; i < id; i++) {
          let cell = document.createElement("div");
-         // cell.textContent = "";
          cell.className = "cell";
          cell.id = counter;
          objElem.id = counter++;
