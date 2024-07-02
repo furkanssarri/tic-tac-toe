@@ -14,4 +14,4 @@ live demo -> [here](https://furkanssarri.github.io/tic-tac-toe/)
 
 ----
 
-[^1]: Note: Due to uncontrolled external factors, this project was poorly coded and left out, and eventually was abandoned. This commit aims to get a copy of the project for archival reasons. It is likely that the project will be complately rewritten from scratch just to make sure to grasp all the necessary concepts and meet the aforementioned criterion. 
+[^1]: Note: Due to several external factors, this project was poorly coded and left out, and eventually was abandoned. This commit aims to get a copy of the project for archival reasons. It is likely that the project will be completely rewritten from scratch just to make sure to grasp all the necessary concepts and meet the aforementioned criterion. 
