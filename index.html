@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!--styles-->
    <link rel="stylesheet" href="style/style.css">
+   <!--Google Fonts-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
    <title>Tic-Tac-Toe</title>
 </head>
-<body>
-   <h1>Tic tac toe</h1>
 
-   <div class="content">
-      <div class="form-area">
-         <!-- <form id="myForm" class="marker-selection-area">
-            <input type="text" name="player_name" id="textInput">
-            <button class="markerButton" type="button">X</button>
-            <button class="markerButton" type="button">O</button>
-            <button id="submitBtn" type="submit">Submit</button>
-         </form> -->
-      
-         <!-- <button id="logObj" type="button">Log!</button> -->
-      </div>
-   
-      <main>
-         <div id="gameArea">
-            
+<body>
+   <div id="wrapper">
+      <div class="content">
+         <h1>Tic tac toe</h1>
+         <div class="form-area">
+            <!-- <form id="myForm" class="marker-selection-area">
+               <input type="text" name="player_name" id="textInput">
+               <button class="markerButton" type="button">X</button>
+               <button class="markerButton" type="button">O</button>
+               <button id="submitBtn" type="submit">Submit</button>
+            </form> -->
+
+            <!-- <button id="logObj" type="button">Log!</button> -->
          </div>
-      </main>
+
+         <main>
+            <div id="gameArea">
+               <!-- <div class="overlay"></div> -->
+            </div>
+         </main>
+      </div>
    </div>
    <script defer src="js/gameBoard.js"></script>
    <script defer src="js/players.js"></script>
    <script defer src="js/game.js"></script>
    <script defer src="main.js"></script>
 </body>
+
 </html>
