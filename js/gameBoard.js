@@ -1,28 +1,26 @@
-function gameBoardModule() {
-   const gameBoardArr = [];
-   function createGameBoard(id) {
+const gameBoardModule = (function () {
+   const gameBoard = [];
+   function _initializeGameBoard (id) {
       let counter = 0;
-      let objElem = new Object;
-      let gameArea = document.getElementById("gameArea");
       for (let i = 0; i < id; i++) {
+         gameBoard.push("");
+      }
+      const gameArea = document.querySelector("#gameArea");
+      gameBoard.forEach((index, id) => {
          let cell = document.createElement("div");
          cell.className = "cell";
          cell.id = counter;
-         objElem.id = counter++;
-         objElem.content = "";
+         // cell.textContent = cell.id;
          gameArea.appendChild(cell);
-         gameBoardArr.push(objElem);
-         objElem = {};
-      }
+         counter++;
+      });
+      return gameBoard;
    }
-
-
+   const setGameBoard = (id) => _initializeGameBoard(id);
+   const getGameBoard = () => gameBoard;
+   
    return {
-      createGameBoard,
-      gameBoardArr,
+      setGameBoard,
+      getGameBoard,
    }
-};
-
-
-
-export { gameBoardModule };
+})();
