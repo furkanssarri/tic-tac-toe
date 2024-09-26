@@ -6,14 +6,14 @@ const gameModule = (function () {
    let gameRunning = false;
 
    const winningPatterns = [
-      [0,1,2],
-      [3,4,5],
-      [6,7,8],
-      [0,3,6],
-      [1,4,7],
-      [2,5,8],
-      [0,4,8],
-      [2,4,6]
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
    ];
    function startGame() {
       gameRunning = true;
@@ -41,14 +41,28 @@ const gameModule = (function () {
       }
       return false;
    }
+   function checkDraw() {
+      for (const index of board) {
+         if (index === "") {
+            return false;
+         }
+      }
+      return true;
+   }
 
    function _declareWinner() {
+      if (checkDraw()) {
+         _stopGame();
+         mainModule.printGameOver("Draw")
+      }
       if (_checkWinner("X")) {
          _stopGame();
          mainModule.printGameOver(playerX.name);
       } else if (_checkWinner("O")) {
          _stopGame();
          mainModule.printGameOver(playerO.name);
+      } else if (_checkWinner("draw")) {
+         
       }
    }
 
@@ -57,9 +71,11 @@ const gameModule = (function () {
    const getDeclareWinner = () => _declareWinner();
    const isGameRunning = () => gameRunning;
    const setGameRestart = () => _restartGame();
+   
    return {
       getPlayer,
       setPlayer,
+      checkDraw,
       getDeclareWinner,
       isGameRunning,
       startGame,

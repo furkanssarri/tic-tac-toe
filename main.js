@@ -20,19 +20,23 @@ const mainModule = (function () {
          gameModule.setPlayer();
          gameModule.getDeclareWinner();
       }
-   }
+   }   
 
    function printGameOver(winner) {
-      let wrapper = document.querySelector("#wrapper");
+      let blurryDiv = document.querySelector("#blurryDiv");
       let container = document.createElement("div");
       let h3 = document.createElement("h3");
       let span = document.createElement("span");
       let restartBtn = document.createElement("button");
-      // contentContainer.classList.add("blur");
+      blurryDiv.classList.add("blur");
       restartBtn.textContent = "Restart game";
       restartBtn.classList.add("restart-button");
       h3.textContent = "GAME OVER";
-      span.textContent = `The winner is ${winner}.`;
+      if (winner === "Draw") {
+         span.textContent = `Its a draw.`;
+      }else {
+         span.textContent = `The winner is ${winner}.`;
+      }
       container.className = "overlay";
       container.appendChild(h3);
       container.appendChild(span);
@@ -43,6 +47,7 @@ const mainModule = (function () {
          resetCells();
          removeOverlay();
          gameModule.setGameRestart();
+         blurryDiv.classList.remove("blur")
       });
    }
 
