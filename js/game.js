@@ -1,7 +1,7 @@
 const gameModule = (function () {
    const playerX = playerModule.setPlayers("Player X", "X");
    const playerO = playerModule.setPlayers("Player O", "O");
-   const board = gameBoardModule.setGameBoard(9);
+   let board = gameBoardModule.setGameBoard(9);
    let currentPlayer = playerX;
    let gameRunning = false;
 
@@ -26,7 +26,9 @@ const gameModule = (function () {
 
    function _restartGame() {
       board.length = 0;
+      board = gameBoardModule.setGameBoard(9);
       gameRunning = true;
+      currentPlayer = playerX;
    }
 
    function _changePlayer() {
