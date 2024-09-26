@@ -1,7 +1,7 @@
 const gameModule = (function () {
+   let board = gameBoardModule.setGameBoard(9);
    const playerX = playerModule.setPlayers("Player X", "X");
    const playerO = playerModule.setPlayers("Player O", "O");
-   let board = gameBoardModule.setGameBoard(9);
    let currentPlayer = playerX;
    let gameRunning = false;
 
@@ -15,7 +15,6 @@ const gameModule = (function () {
       [0,4,8],
       [2,4,6]
    ];
-
    function startGame() {
       gameRunning = true;
    }
@@ -25,8 +24,7 @@ const gameModule = (function () {
    }
 
    function _restartGame() {
-      board.length = 0;
-      board = gameBoardModule.setGameBoard(9);
+      board.fill("");
       gameRunning = true;
       currentPlayer = playerX;
    }
@@ -54,7 +52,6 @@ const gameModule = (function () {
       }
    }
 
-   
    const getPlayer = () => currentPlayer;
    const setPlayer = () => _changePlayer();
    const getDeclareWinner = () => _declareWinner();

@@ -8,8 +8,6 @@ const mainModule = (function () {
       gameModule.startGame();
    });
 
-   
-
    function updateCell(e) {
       const cellIndex = e.target.id;
       const currentCell = document.getElementById(cellIndex);
@@ -17,7 +15,7 @@ const mainModule = (function () {
          return
       } else {
          e.target.textContent = gameModule.getPlayer().mark
-         let arr = gameBoardModule.getGameBoard(9);
+         let arr = gameBoardModule.getGameBoard();
          arr.splice(cellIndex, 1, gameModule.getPlayer().mark);
          gameModule.setPlayer();
          gameModule.getDeclareWinner();
@@ -42,9 +40,9 @@ const mainModule = (function () {
       let gameWrapper = document.getElementById("gameArea");
       gameWrapper.appendChild(container);
       restartBtn.addEventListener("click", e => {
-         gameModule.setGameRestart();
          resetCells();
          removeOverlay();
+         gameModule.setGameRestart();
       });
    }
 
@@ -58,8 +56,6 @@ const mainModule = (function () {
          cell.textContent = "";
       });
    }
-
-
 
    return {
       printGameOver,
