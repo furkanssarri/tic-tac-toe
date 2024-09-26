@@ -24,6 +24,11 @@ const gameModule = (function () {
       gameRunning = false;
    }
 
+   function _restartGame() {
+      board.length = 0;
+      gameRunning = true;
+   }
+
    function _changePlayer() {
       currentPlayer = (currentPlayer === playerX) ? playerO : playerX;
    }
@@ -41,11 +46,9 @@ const gameModule = (function () {
       if (_checkWinner("X")) {
          _stopGame();
          mainModule.printGameOver(playerX.name);
-         console.log(`The ${playerX.name} wins.`);
       } else if (_checkWinner("O")) {
          _stopGame();
          mainModule.printGameOver(playerO.name);
-         console.log(`The ${playerO.name} wins.`);
       }
    }
 
@@ -54,11 +57,13 @@ const gameModule = (function () {
    const setPlayer = () => _changePlayer();
    const getDeclareWinner = () => _declareWinner();
    const isGameRunning = () => gameRunning;
+   const setGameRestart = () => _restartGame();
    return {
       getPlayer,
       setPlayer,
       getDeclareWinner,
       isGameRunning,
       startGame,
+      setGameRestart,
    }
 })();

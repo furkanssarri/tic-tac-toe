@@ -29,19 +29,40 @@ const mainModule = (function () {
       let container = document.createElement("div");
       let h3 = document.createElement("h3");
       let span = document.createElement("span");
+      let restartBtn = document.createElement("button");
       // contentContainer.classList.add("blur");
+      restartBtn.textContent = "Restart game";
+      restartBtn.classList.add("restart-button");
       h3.textContent = "GAME OVER";
       span.textContent = `The winner is ${winner}.`;
       container.className = "overlay";
       container.appendChild(h3);
       container.appendChild(span);
+      container.appendChild(restartBtn);
       let gameWrapper = document.getElementById("gameArea");
       gameWrapper.appendChild(container);
+      restartBtn.addEventListener("click", e => {
+         gameModule.setGameRestart();
+         resetCells();
+         removeOverlay();
+      });
+   }
+
+   function removeOverlay() {
+      let overlay = document.querySelector(".overlay");
+      overlay.remove();
+   }
+
+   function resetCells() {
+      cells.forEach(cell => {
+         cell.textContent = "";
+      });
    }
 
 
 
    return {
       printGameOver,
+      updateCell,
    }
 })();

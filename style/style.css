@@ -1,7 +1,7 @@
 :root {
    --dark-background-color: #0a626e;
    --dark-text-color: #fff;
-   --light-background-color: #0dbe83;
+   --light-background-color: rgb(67, 193, 151);
    --light-text-color: #000;
 }
 
@@ -19,8 +19,8 @@ body {
 }
 
 body {
-   background-color: var(--light-background-color);
-   color: var(--light-text-color);
+   background-color: var(--dark-background-color);
+   color: var(--dark-text-color);
    font-size: 16px;
    font-family: Noto-sans, sans-serif
 }
@@ -41,15 +41,14 @@ body {
 
 .overlay {
    position: absolute;
-   position: absolute;
    left: 0;
    right: 0;
    margin-inline: auto;
    width: fit-content;
    width: 55%;
    height: 60%;
-   background: rgba(0, 0, 0, 0.7);
-   /* Semi-transparent background */
+   background-color: var(--light-background-color);
+   opacity: 0.7;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -115,10 +114,42 @@ body {
    border-radius: 2px;
 }
 
+.restart-button {
+   background-color: #3498db; 
+   color: white; 
+   padding: 12px 24px;
+   margin: 25px;
+   font-size: 16px; 
+   border: none; 
+   border-radius: 8px; 
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.restart-button:hover {
+   background-color: #2980b9;
+   transform: translateY(-2px); 
+   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.restart-button:active {
+   background-color: #1f6391;
+   transform: translateY(0);
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.restart-button:focus {
+   outline: none;
+   box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.5);
+}
+
+/* 
 @media (prefers-color-scheme: dark) {
 
    body {
       background-color: var(--dark-background-color);
       color: var(--dark-text-color);
    }
-}
+} */
