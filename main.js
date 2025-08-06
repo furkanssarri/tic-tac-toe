@@ -1,4 +1,8 @@
-const mainModule = (function () {
+import { gameBoardModule } from "./js/gameBoard.js";
+import { gameModule } from "./js/game.js";
+import { playerModule } from "./js/players.js";
+
+export const mainModule = (function () {
    const cells = document.querySelectorAll(".cell");
 
    cells.forEach(cell => {
@@ -20,7 +24,7 @@ const mainModule = (function () {
          gameModule.setPlayer();
          gameModule.getDeclareWinner();
       }
-   }   
+   }
 
    function printGameOver(winner) {
       let blurryDiv = document.querySelector("#blurryDiv");

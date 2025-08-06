@@ -1,4 +1,8 @@
-const gameModule = (function () {
+import { playerModule } from "./players.js";
+import { gameBoardModule } from "./gameBoard.js";
+import { mainModule } from "../main.js";
+
+export const gameModule = (function () {
    let board = gameBoardModule.setGameBoard(9);
    const playerX = playerModule.setPlayers("Player X", "X");
    const playerO = playerModule.setPlayers("Player O", "O");

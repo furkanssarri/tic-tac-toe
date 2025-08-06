@@ -1,4 +1,4 @@
-const playerModule = (function () {
+export const playerModule = (function () {
    function _player(name, mark) {
       return { name, mark };
    }

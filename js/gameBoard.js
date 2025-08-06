@@ -1,4 +1,4 @@
-const gameBoardModule = (function () {
+export const gameBoardModule = (function () {
    const gameBoard = [];
    function _initializeGameBoard (id) {
       let counter = 0;
@@ -10,7 +10,6 @@ const gameBoardModule = (function () {
          let cell = document.createElement("div");
          cell.className = "cell";
          cell.id = counter;
-         // cell.textContent = cell.id;
          gameArea.appendChild(cell);
          counter++;
       });
